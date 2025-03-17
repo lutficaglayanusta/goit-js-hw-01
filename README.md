@@ -34,7 +34,15 @@ function getShippingMessage(country, price, deliveryFee) {
 
 ```js
 function getElementWidth(content, padding, border) {
-    return Number.parseFloat(content) + Number.parseFloat(padding) * 2 + Number.parseFloat(border) * 2;
+    let result;
+
+    let newContent = content.split("px")[0]
+    let newPadding = padding.split('px')[0];
+    let newBorder = border.split('px')[0];
+    
+    result = Number.parseFloat(newContent) + Number.parseFloat(newPadding) * 2 + Number.parseFloat(newBorder) * 2
+
+    return result
 }
 ```
 
